@@ -34,7 +34,10 @@
       <div class="card-body">
         <h5 class="card-title text-center">Pide cita</h5>
         <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum quasi sint modi delectus culpa inventore!</p>
-        <p class="card-text"><button type="button" class="btn btn-outline-primary">Click</button></p>
+        <p class="card-text"><button type="button" class="btn btn-outline-primary" routerLink="/citas" routerLinkActive="active-link">Click</button></p>
       </div>
     </div>
   </div>
+
+  <input type="text" ngbDatepicker #d="ngbDatepicker"/>
+  <button (click)="d.toggle()">Toggle</button>
