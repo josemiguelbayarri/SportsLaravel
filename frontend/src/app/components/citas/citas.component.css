@@ -1,0 +1,14 @@
+
+.titulo_visita, .titulo_cita{
+    text-align: center;
+    margin: 1em;
+    border-bottom: 2px solid gray;
+}
+.container {
+    margin: 1em auto;
+    width: 100%;
+}
+
+.col-md-4 {
+    width: 50%;
+}
