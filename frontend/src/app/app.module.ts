@@ -12,7 +12,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { CitasComponent } from './components/citas/citas.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalFormComponent } from './components/modal-form/modal-form.component';
+import { ActividadesComponent } from './components/actividades/actividades.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ModalFormComponent } from './components/modal-form/modal-form.component
     FooterComponent,
     HomeComponent,
     CitasComponent,
-    ModalFormComponent
+    ActividadesComponent,
+    NosotrosComponent
   ],
   imports: [
     BrowserModule,

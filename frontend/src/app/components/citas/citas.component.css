@@ -1,5 +1,6 @@
 
-.titulo_visita, .titulo_cita{
+.titulo_visita{
+    width: 100%;
     text-align: center;
     margin: 1em;
     border-bottom: 2px solid gray;
@@ -12,3 +13,4 @@
 .col-md-4 {
     width: 50%;
 }
+

@@ -1,0 +1,27 @@
+.act {
+    text-align: center;
+    width: 100%;
+    margin: 2em auto;
+    box-shadow: 0 0.375rem 1.0625rem 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    
+}
+
+.act img {
+    width: 100%;
+}
+
+.act h3 { 
+    margin-top: .5em;
+    
+}
+.act p {
+    margin-top: .5em;
+    padding: 1em 2em;
+}
+
+@media only screen and (max-width: 600px){
+    #pip {
+        width: 100%;
+    }
+}
