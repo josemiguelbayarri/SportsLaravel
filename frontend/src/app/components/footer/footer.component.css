@@ -1,3 +1,7 @@
 .fab { 
     margin-left: .5em;
 }
+
+footer h5, footer p {
+    font-family: 'Oswald', sans-serif;
+}

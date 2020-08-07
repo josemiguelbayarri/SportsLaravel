@@ -1,8 +1,9 @@
+<form #registerForm="ngForm" (submit)="register(registerForm)">
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-expand-lg bg-danger text-white" [containerInside]="false">
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="#">SPORTSLARAVEL</a></mdb-navbar-brand>
+  <mdb-navbar-brand><a class="navbar-brand text-white" href="#">SPORTSLARAVEL</a></mdb-navbar-brand>
 
   <!-- Collapsible content -->
   <links>
@@ -12,85 +13,141 @@
     <!-- Links -->
 
     <ul class="navbar-nav ml-auto nav-flex-icons">
-      <button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
-        (click)="frame.show()" mdbWavesEffect>REGÍSTRATE
-      </button>
-      
-      <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
-        aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header text-center">
-              <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body mx-3">
-              <div class="md-form mb-5">
-                <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
-                <input type="text" id="orangeForm-name" class="form-control" [formControl]="signupFormModalName"
-                  mdbInput mdbValidate>
-                <label for="orangeForm-name">Your name</label>
-                <mdb-error
-                  *ngIf="signupFormModalName.invalid && (signupFormModalName.dirty || signupFormModalName.touched)">
-                  Input invalid
-                </mdb-error>
-                <mdb-success
-                  *ngIf="signupFormModalName.valid && (signupFormModalName.dirty || signupFormModalName.touched)">
-                  Input valid
-                </mdb-success>
+        <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
+          aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold bg-danger">
+                  Regístrate</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-              <div class="md-form mb-5">
-                <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
-                <input type="email" id="orangeForm-email" class="form-control" [formControl]="signupFormModalEmail"
-                  mdbInput mdbValidate>
-                <label for="orangeForm-email">Your email</label>
-                <mdb-error
+              <div class="modal-body mx-3">
+
+                <!-- NOMBRE FORMULARIO -->
+                <div class="md-form mb-5">
+                  <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+                  <input type="text" id="orangeForm-name" ngModel name="name" class="form-control"
+                   mdbInput mdbValidate>
+                  <label for="orangeForm-name">Tu nombre</label>
+                  <mdb-error
+                    *ngIf="signupFormModalName.invalid && (signupFormModalName.dirty || signupFormModalName.touched)">
+
+                    Entrada inválida
+                  </mdb-error>
+                  <mdb-success
+                    *ngIf="signupFormModalName.valid && (signupFormModalName.dirty || signupFormModalName.touched)">
+                    Entrada válida
+                  </mdb-success>
+                </div>
+
+
+
+
+                <!-- APELLIDO FORMULARIO -->
+
+                <div class="md-form mb-5">
+                  <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+                  <input type="text" id="orangeForm-name" ngModel name="surname" class="form-control"
+                   mdbInput mdbValidate>
+                  <label for="orangeForm-name">Tu apellido</label>
+                  <mdb-error
+                    *ngIf="signupFormModalName.invalid && (signupFormModalName.dirty || signupFormModalName.touched)">
+
+                    Entrada inválida
+                  </mdb-error>
+                  <mdb-success
+                    *ngIf="signupFormModalName.valid && (signupFormModalName.dirty || signupFormModalName.touched)">
+                    Entrada válida
+                  </mdb-success>
+                </div>
+
+
+
+                <!-- EMAIL FORMULARIO -->
+                <div class="md-form mb-5">
+                  <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+                  <input type="email" id="orangeForm-email" ngModel name="email" class="form-control"
+                     mdbInput mdbValidate>
+                  <label for="orangeForm-email">Tu email</label>
+                  <!-- <mdb-error
                   *ngIf="signupFormModalEmail.invalid && (signupFormModalEmail.dirty || signupFormModalEmail.touched)">
-                  Input
-                  invalid
+                  Entrada inválida
                 </mdb-error>
                 <mdb-success
                   *ngIf="signupFormModalEmail.valid && (signupFormModalEmail.dirty || signupFormModalEmail.touched)">
-                  Input
-                  valid
-                </mdb-success>
-              </div>
+                  Entrada válida
+                </mdb-success> -->
+                </div>
 
-              <div class="md-form mb-4">
-                <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
-                <input type="password" id="orangeForm-pass" class="form-control" [formControl]="signupFormModalPassword"
+                <!-- TELEFONO FORMULARIO -->
+
+                <!--  <div class="md-form mb-5">
+                <mdb-icon fas icon="mobile-alt" class="prefix grey-text"></mdb-icon>
+                <input type="tel" id="orangeForm-phone" ngModel name="phone" class="form-control" [formControl]="signupFormModalEmail"
                   mdbInput mdbValidate>
-                <label for="orangeForm-pass">Your password</label>
-                <mdb-error
-                  *ngIf="signupFormModalPassword.invalid && (signupFormModalPassword.dirty || signupFormModalPassword.touched)">
-                  Input invalid
-                </mdb-error>
-                <mdb-success
-                  *ngIf="signupFormModalPassword.valid && (signupFormModalPassword.dirty || signupFormModalPassword.touched)">
-                  Input valid
-                </mdb-success>
-              </div>
+                <label for="orangeForm-phone">Tu número de teléfono</label>
+              </div> -->
 
+                <!-- BIRTHDATE FORMULARIO -->
+
+                <div class="md-form mb-5">
+                  <mdb-icon fas icon="calendar" class="prefix grey-text"></mdb-icon>
+                  <input type="date" id="orangeForm-birthdate" ngModel name="birthdate" class="form-control" mdbInput
+                    mdbValidate>
+                  <label for="orangeForm-birthdate">Tu fecha de nacimiento</label>
+                </div>
+
+
+                <!-- PASSWORD FORMULARIO -->
+
+                <div class="md-form mb-4">
+                  <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+                  <input type="password" id="orangeForm-pass" ngModel name="password" class="form-control"
+                   mdbInput mdbValidate>
+                  <label for="orangeForm-pass">Tu password</label>
+                  <mdb-error
+                    *ngIf="signupFormModalPassword.invalid && (signupFormModalPassword.dirty || signupFormModalPassword.touched)">
+                    Entrada inválida
+                  </mdb-error>
+                  <mdb-success
+                    *ngIf="signupFormModalPassword.valid && (signupFormModalPassword.dirty || signupFormModalPassword.touched)">
+                    Entrada válida
+                  </mdb-success>
+                </div>
+
+
+
+
+                <!-- BOTON FORMULARIO -->
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button type="submit" mdbBtn color="danger" class="waves-light" mdbWavesEffect>Regístrate</button>
+              </div>
             </div>
-            <div class="modal-footer d-flex justify-content-center">
-              <button mdbBtn color="deep-orange" class="waves-light" mdbWavesEffect>Sign up</button>
-            </div>
+
           </div>
         </div>
-      </div>
+      
+
+
+        
+
+
       <li class="nav-item">
-        <a routerLink="" routerLinkActive="active-link" class="nav-link waves-light" mdbWavesEffect>INICIO</a>
+        <a routerLink="/citas" routerLinkActive="active-link" class="nav-link text-white waves-light" mdbWavesEffect>CITAS</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/citas" routerLinkActive="active-link" class="nav-link waves-light" mdbWavesEffect>CITAS</a>
+        <a routerLink="/nosotros" routerLinkActive="active-link" class="nav-link text-white waves-light" mdbWavesEffect>SOBRE
+          NOSOTROS</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/nosotros" routerLinkActive="active-link" class="nav-link waves-light" mdbWavesEffect>SOBRE NOSOTROS</a>
+        <a routerLink="/actividades" routerLinkActive="active-link" class="nav-link text-white waves-light"
+          mdbWavesEffect>ACTIVIDADES</a>
       </li>
-      <li class="nav-item">
-        <a routerLink="/actividades" routerLinkActive="active-link" class="nav-link waves-light" mdbWavesEffect>ACTIVIDADES</a>
+      <li class="nav-item" (click)="frame.show()"><a class="nav-link waves-light" mdbWavesEffect>REGÍSTRATE</a>
       </li>
     </ul>
   </links>
@@ -98,3 +155,4 @@
 
 </mdb-navbar>
 <!--/.Navbar-->
+</form>

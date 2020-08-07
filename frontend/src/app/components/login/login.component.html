@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-example">
+            <!-- Default form login -->
+            <form class="text-center border border-light p-5 loginForm" #loginForm="ngForm" (submit)="login(loginForm)">
+
+                <p class="h4 mb-4">Logueate para disfrutar de todas nuestras promociones</p>
+
+                <!-- Email -->
+                <input type="email" id="defaultLoginFormEmail" name="email" ngModel type="email" class="form-control mb-4" placeholder="E-mail">
+
+                <!-- Password -->
+                <input type="password" id="defaultLoginFormPassword" name="password" ngModel type="password" class="form-control mb-4" placeholder="Password">
+
+                <div class="d-flex justify-content-around">
+                    <div>
+                        <!-- Remember me -->
+                        <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+                    </div>
+                    <div>
+                        <!-- Forgot password -->
+                        <a href="">Forgot password?</a>
+                    </div>
+                </div>
+
+                <!-- Sign in button -->
+                <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+
+                <!-- Register -->
+                <p>Not a member?
+                    <a href="">Register</a>
+                </p>
+
+                <!-- Social login -->
+                <p>or sign in with:</p>
+
+                <a type="button" class="light-blue-text mx-2">
+                    <mdb-icon fab icon="facebook"></mdb-icon>
+                </a>
+                <a type="button" class="light-blue-text mx-2">
+                    <mdb-icon fab icon="twitter"></mdb-icon>
+                </a>
+                <a type="button" class="light-blue-text mx-2">
+                    <mdb-icon fab icon="linkedin"></mdb-icon>
+                </a>
+                <a type="button" class="light-blue-text mx-2">
+                    <mdb-icon fab icon="github"></mdb-icon>
+                </a>
+
+            </form>
+            <!-- Default form login -->
+
+        </div>
+        <div class="col col-example">
+            <div class="image">
+                <img src="../../../assets/img/gym18.jpg" alt="">
+            </div>
+            
+
+    </div>
