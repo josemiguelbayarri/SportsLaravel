@@ -1,0 +1,33 @@
+
+.titulo_visita{
+    width: 100%;
+    text-align: center;
+    margin: 1em;
+    border-bottom: 2px solid gray;
+}
+.container {
+    margin: 1em auto;
+    width: 100%;
+}
+
+.col-md-4 {
+    width: 50%;
+}
+
+.horario {
+    border: 1px solid red;
+    width: 50%;
+    margin: 2em auto;
+}
+
+.titulo_cita {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+.tiempo {
+    height: 35px;
+    width: 100%;
+    margin: 2em auto;
+    color: gray;
+}

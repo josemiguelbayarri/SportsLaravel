@@ -11,11 +11,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
-import { CitasComponent } from './components/citas/citas.component';
+import { AppointmentComponent } from './components/appointment/appointment.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ActividadesComponent } from './components/actividades/actividades.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { LoginComponent } from './components/login/login.component';
+import { AllmeetsComponent } from './components/allmeets/allmeets.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +24,11 @@ import { LoginComponent } from './components/login/login.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CitasComponent,
+    AppointmentComponent,
     ActividadesComponent,
     NosotrosComponent,
-    LoginComponent
+    LoginComponent,
+    AllmeetsComponent
   ],
   imports: [
     BrowserModule,

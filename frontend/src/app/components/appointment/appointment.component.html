@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+
+        <h2 class="titulo_visita">VISITA NUESTRA INSTALACIONES</h2>
+        <img src="../../../assets/img/gym5.jpg" class="img-fluid" alt="Responsive image">
+
+    </div>
+
+    <div class="horario">
+        <form class="text-center border border-light p-5 appointmentForm" #appointmentForm="ngForm" (submit)="create(appointmentForm)">
+
+            <h4 class="titulo_cita">Pide cita para una de nuestras clases</h4>
+
+            <!-- fecha de la cita -->
+            <input class="tiempo" ngModel name="appointmentDate" matInput type="datetime-local" placeholder="start date">
+
+            <!-- clase de la cita -->
+            <select ngModel name="type" class="browser-default custom-select">
+                <option selected>¿Qué actividad quieres realizar?</option>
+                <option value="strong_nation">STRONG NATION</option>
+                <option value="body_pump">BODY PUMP</option>
+                <option value="ciclo_indoor">CICLO INDOOR</option>
+
+                <option value="body_pump">BODY PUMP</option>
+                <option value="zumba">ZUMBA</option>
+                <option value="aerobox">AEROBOX</option>
+
+                <option value="intensive_training">INTENSIVE TRAINING</option>
+                <option value="pilates">PILATES</option>
+                <option value="gap">GAP</option>
+              </select>
+
+            <!-- Sign in button -->
+            <button mdbBtn color="danger" block="true" class="my-4" type="submit">Pedir cita</button>
+
+            
+           
+        </form>
+    </div>
+</div>

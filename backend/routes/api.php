@@ -27,5 +27,12 @@ Route::group(['prefix' => 'auth'], function () {
     });
 });
 
+Route::prefix('appointment')->middleware('auth:api')->group(function ()
+{
+    Route::get('', 'AppointmentController@getAll');
+    Route::post('create', 'AppointmentController@create');
+    Route::put('{id}', 'AppointmentController@update');
+    Route::delete('{id}', 'AppointmentController@delete');
+});
 
-/*  */
+

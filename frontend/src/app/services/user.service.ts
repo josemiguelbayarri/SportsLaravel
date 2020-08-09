@@ -30,7 +30,7 @@ export class UserService {//exportar la logica de este archivo
   logout(): void {//salir de un sesion de usuario
     this.httpClient.get(this.API_URL + '/api/auth/logout',{//endpoint del backend para salir de una sesion de usuario
       headers: {
-        authorization: localStorage.getItem('authToken')//----------------------------------------------------------------
+        authorization: 'Bearer ' + localStorage.getItem('authToken')//----------------------------------------------------------------
       }
     }).subscribe(console.log);//------------------------------------------------------------------------
     this.setUser(null);//---------------------------------------------------------------------

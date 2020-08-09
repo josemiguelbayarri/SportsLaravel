@@ -6,12 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Appointment extends Model
 {
-    use SoftDeletes;
 
-    protected $fillable = ['AppointmentType','DateAndHour', 'user_id'];
+    protected $fillable = ['appointmentDate','type','user_id'];
 
     public function user()
     {
-        return $this->hasMany('\App\Appointment');
+        return $this->belongsTo('\App\User','user_id','id','users');
     }
 }

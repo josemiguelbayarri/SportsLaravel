@@ -1,18 +1,18 @@
 <form #registerForm="ngForm" (submit)="register(registerForm)">
-<!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg bg-danger text-white" [containerInside]="false">
+  <!--Navbar-->
+  <mdb-navbar SideClass="navbar navbar-expand-lg bg-danger text-white" [containerInside]="false">
 
-  <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand text-white" href="#">SPORTSLARAVEL</a></mdb-navbar-brand>
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand text-white" href="#">SPORTSLARAVEL</a></mdb-navbar-brand>
 
-  <!-- Collapsible content -->
-  <links>
+    <!-- Collapsible content -->
+    <links>
 
-    <!-- Links -->
+      <!-- Links -->
 
-    <!-- Links -->
+      <!-- Links -->
 
-    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
         <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
           aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -29,8 +29,7 @@
                 <!-- NOMBRE FORMULARIO -->
                 <div class="md-form mb-5">
                   <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
-                  <input type="text" id="orangeForm-name" ngModel name="name" class="form-control"
-                   mdbInput mdbValidate>
+                  <input type="text" id="orangeForm-name" ngModel name="name" class="form-control" mdbInput mdbValidate>
                   <label for="orangeForm-name">Tu nombre</label>
                   <mdb-error
                     *ngIf="signupFormModalName.invalid && (signupFormModalName.dirty || signupFormModalName.touched)">
@@ -50,8 +49,8 @@
 
                 <div class="md-form mb-5">
                   <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
-                  <input type="text" id="orangeForm-name" ngModel name="surname" class="form-control"
-                   mdbInput mdbValidate>
+                  <input type="text" id="orangeForm-name" ngModel name="surname" class="form-control" mdbInput
+                    mdbValidate>
                   <label for="orangeForm-name">Tu apellido</label>
                   <mdb-error
                     *ngIf="signupFormModalName.invalid && (signupFormModalName.dirty || signupFormModalName.touched)">
@@ -69,8 +68,8 @@
                 <!-- EMAIL FORMULARIO -->
                 <div class="md-form mb-5">
                   <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
-                  <input type="email" id="orangeForm-email" ngModel name="email" class="form-control"
-                     mdbInput mdbValidate>
+                  <input type="email" id="orangeForm-email" ngModel name="email" class="form-control" mdbInput
+                    mdbValidate>
                   <label for="orangeForm-email">Tu email</label>
                   <!-- <mdb-error
                   *ngIf="signupFormModalEmail.invalid && (signupFormModalEmail.dirty || signupFormModalEmail.touched)">
@@ -105,8 +104,8 @@
 
                 <div class="md-form mb-4">
                   <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
-                  <input type="password" id="orangeForm-pass" ngModel name="password" class="form-control"
-                   mdbInput mdbValidate>
+                  <input type="password" id="orangeForm-pass" ngModel name="password" class="form-control" mdbInput
+                    mdbValidate>
                   <label for="orangeForm-pass">Tu password</label>
                   <mdb-error
                     *ngIf="signupFormModalPassword.invalid && (signupFormModalPassword.dirty || signupFormModalPassword.touched)">
@@ -130,29 +129,47 @@
 
           </div>
         </div>
-      
 
 
+
+
+
+
+        <li class="nav-item">
+          <a routerLink="/appointment" routerLinkActive="active-link" class="nav-link text-white waves-light"
+            mdbWavesEffect>CITAS</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/nosotros" routerLinkActive="active-link" class="nav-link text-white waves-light"
+            mdbWavesEffect>SOBRE
+            NOSOTROS</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/actividades" routerLinkActive="active-link" class="nav-link text-white waves-light"
+            mdbWavesEffect>ACTIVIDADES</a>
+        </li>
+        <div class="guestZone"  *ngIf="!getUser()">
+          <li class="nav-item">
+            <a routerLink="/login" routerLinkActive="active-link" class="nav-link text-white waves-light"
+              mdbWavesEffect>LOGIN</a>
+          </li>
+          <li class="nav-item" (click)="frame.show()">
+            <a class="nav-link text-white waves-light" mdbWavesEffect>REGÍSTRATE</a>
+          </li>
+        </div>
+        
+        <div class="userZone" *ngIf="getUser() as user">
+          <li class="nav-item">
+            <a id="mayuscula" class="nav-link waves-light" mdbWavesEffect>{{user.name}}</a>
+            <a id="mayuscula" class="nav-link waves-light" mdbWavesEffect (click)="logout()">LOGOUT</a>
+          </li>
+        </div>
         
 
+      </ul>
+    </links>
+    <!-- Collapsible content -->
 
-      <li class="nav-item">
-        <a routerLink="/citas" routerLinkActive="active-link" class="nav-link text-white waves-light" mdbWavesEffect>CITAS</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/nosotros" routerLinkActive="active-link" class="nav-link text-white waves-light" mdbWavesEffect>SOBRE
-          NOSOTROS</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/actividades" routerLinkActive="active-link" class="nav-link text-white waves-light"
-          mdbWavesEffect>ACTIVIDADES</a>
-      </li>
-      <li class="nav-item" (click)="frame.show()"><a class="nav-link waves-light" mdbWavesEffect>REGÍSTRATE</a>
-      </li>
-    </ul>
-  </links>
-  <!-- Collapsible content -->
-
-</mdb-navbar>
-<!--/.Navbar-->
+  </mdb-navbar>
+  <!--/.Navbar-->
 </form>
