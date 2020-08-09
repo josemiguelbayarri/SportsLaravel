@@ -148,22 +148,25 @@
           <a routerLink="/actividades" routerLinkActive="active-link" class="nav-link text-white waves-light"
             mdbWavesEffect>ACTIVIDADES</a>
         </li>
-        <div class="guestZone"  *ngIf="!getUser()">
-          <li class="nav-item">
+
+        
+          <li class="guestZone nav-item"  *ngIf="!getUser()">
             <a routerLink="/login" routerLinkActive="active-link" class="nav-link text-white waves-light"
               mdbWavesEffect>LOGIN</a>
           </li>
-          <li class="nav-item" (click)="frame.show()">
+          <li class="guestZone nav-item"  *ngIf="!getUser()" (click)="frame.show()">
             <a class="nav-link text-white waves-light" mdbWavesEffect>REGÍSTRATE</a>
           </li>
-        </div>
         
-        <div class="userZone" *ngIf="getUser() as user">
-          <li class="nav-item">
+        
+       
+          <li class="userZone nav-item" *ngIf="getUser() as user">
             <a id="mayuscula" class="nav-link waves-light" mdbWavesEffect>{{user.name}}</a>
+          </li>
+          <li class="userZone nav-item" *ngIf="getUser() as user">
             <a id="mayuscula" class="nav-link waves-light" mdbWavesEffect (click)="logout()">LOGOUT</a>
           </li>
-        </div>
+        
         
 
       </ul>

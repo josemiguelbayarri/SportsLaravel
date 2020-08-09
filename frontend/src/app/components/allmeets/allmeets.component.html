@@ -1,1 +1,13 @@
-<p>allmeets works!</p>
+<div class="titulo">
+    <h2 class="subtitulo">TIPO DE CITA</h2>
+    <h2 class="subtitulo">FECHA DE CITA</h2>
+    <h2 class="subtitulo">CLIENTE</h2>
+</div>
+
+<div class="citas_molde" *ngFor="let appointment of ViewAppointments">
+    <div class="main">
+        <p class="sub_main">{{appointment.type}}</p>
+        <p class="sub_main">{{appointment.appointmentDate}}</p>
+        <p class="sub_main">{{appointment.user.name}}</p>
+    </div>
+</div>
