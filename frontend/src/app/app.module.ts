@@ -17,6 +17,7 @@ import { ActividadesComponent } from './components/actividades/actividades.compo
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { LoginComponent } from './components/login/login.component';
 import { AllmeetsComponent } from './components/allmeets/allmeets.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AllmeetsComponent } from './components/allmeets/allmeets.component';
     ActividadesComponent,
     NosotrosComponent,
     LoginComponent,
-    AllmeetsComponent
+    AllmeetsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

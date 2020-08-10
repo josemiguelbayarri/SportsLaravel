@@ -10,6 +10,7 @@ import { Appointment } from '../models/appointment.model';
 export class AppointmentService {
   API_URL:string = environment.API_URL;
   public appointment: Appointment;
+  AppointmentChoosen: object[];
   public appointments: Appointment[] = [];
   constructor(private HttpClient: HttpClient) { }
   create(appointment: Appointment): Observable<Appointment> {
@@ -39,4 +40,16 @@ export class AppointmentService {
   getAppointmentsB(): Appointment[] {
     return this.appointments;
   }
+  getUserAppointments():Observable<any> {
+    return this.HttpClient.get<any>(this.API_URL+'/api/appointment/user-appointments', {
+      headers: {
+        authorization: 'Bearer '+ localStorage.getItem('authToken')
+      }
+    });
+  }
+  findAppointment(AppointmentChoose: Appointment[]): object {
+    this.AppointmentChoosen = AppointmentChoose;
+    return;
+  }
+  
 }

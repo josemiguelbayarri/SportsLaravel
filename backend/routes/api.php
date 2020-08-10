@@ -33,6 +33,7 @@ Route::prefix('appointment')->middleware('auth:api')->group(function ()
     Route::post('create', 'AppointmentController@create');
     Route::put('{id}', 'AppointmentController@update');
     Route::delete('{id}', 'AppointmentController@delete');
+    Route::get('user-appointments', 'AppointmentController@myAppointments');
 });
 
 

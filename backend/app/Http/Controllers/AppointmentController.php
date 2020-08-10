@@ -49,4 +49,11 @@ class AppointmentController extends Controller
         $appointment->delete();
         return response()->json(['message' => 'Appointment deleted', 'apointment'=>$appointment]);
     }
+
+    public function myAppointments()
+    {
+        $user_id = Auth::id();
+        $appointment = Appointment::where('user_id', $user_id)->get();
+        return $appointment;
+    }
 }

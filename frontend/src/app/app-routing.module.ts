@@ -6,6 +6,7 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ActividadesComponent } from './components/actividades/actividades.component';
 import { LoginComponent } from './components/login/login.component';
 import { AllmeetsComponent } from './components/allmeets/allmeets.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:"actividades", component: ActividadesComponent},
   {path:"login", component: LoginComponent},
   {path:"allmeets", component: AllmeetsComponent},
+  {path:"profile", component: ProfileComponent},
   
 ];
 

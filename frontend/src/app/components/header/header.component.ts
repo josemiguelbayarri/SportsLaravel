@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import {FormControl, FormGroup, Validators, NgForm} from "@angular/forms";
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
@@ -40,14 +40,11 @@ export class HeaderComponent implements OnInit {
 
 /* let cerrar = false; */
 
-  register(registerForm:NgForm):void{
+  register(registerForm:NgForm, frame:any):void{
     const user: User = registerForm.value
     this.userService.register(user)
       .subscribe(res=>{
-        /* cerrar = true;
-        if(cerrar){
-          //revisar
-        } */
+        frame.hide()
         console.log (res)
         setTimeout(() => {
           this.router.navigate(['/login']);

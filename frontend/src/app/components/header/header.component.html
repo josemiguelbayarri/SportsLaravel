@@ -1,4 +1,4 @@
-<form #registerForm="ngForm" (submit)="register(registerForm)">
+<form #registerForm="ngForm" (submit)="register(registerForm, frame)">
   <!--Navbar-->
   <mdb-navbar SideClass="navbar navbar-expand-lg bg-danger text-white" [containerInside]="false">
 
@@ -161,7 +161,7 @@
         
        
           <li class="userZone nav-item" *ngIf="getUser() as user">
-            <a id="mayuscula" class="nav-link waves-light" mdbWavesEffect>{{user.name}}</a>
+            <a routerLink="/profile" id="mayuscula" class="nav-link waves-light" mdbWavesEffect>{{user.name}}</a>
           </li>
           <li class="userZone nav-item" *ngIf="getUser() as user">
             <a id="mayuscula" class="nav-link waves-light" mdbWavesEffect (click)="logout()">LOGOUT</a>
